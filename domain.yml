@@ -1,0 +1,118 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - thanks
+  - find_capital_specific
+  - find_capital_general
+  - give_country
+  - find_time_zone
+  - find_time_zone_for_location
+  - city_info
+  - request_help
+  - confusion
+  - largest_country_general
+  - give_region
+  - largest_country_with_region
+  - largest_country_world
+  - unknown
+
+
+actions:
+  - action_give_capital
+  - action_show_time_zone
+  - action_show_largest_country
+  - action_handle_unknown_intent
+
+entities:
+  - country
+  - city
+  - region
+
+slots:
+  country:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: country
+  city:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: city
+  region:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: region
+    
+
+responses:
+
+  utter_introduction:
+  - text: "Hello, I am GeoBot created by Ibraheem Refai. I serve primarily to tell you the capital of every country and the largest country in any region by population and area. I can also tell you the time in any time zone in the world. And best of all, I can even help you with your feelings; just tell me how you are feeling today."
+
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://www.youtube.com/shorts/WswGLm9iWrs"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, glad you are doing well, carry on!"
+
+  utter_goodbye:
+  - text: "Goodbye! Until next time..."
+
+  utter_iamabot:
+  - text: "You caught me. I am a robot created by my master Ibraheem."
+
+  utter_welcome:
+  - text: "You are welcome!"
+
+  utter_capital_ask:
+  - text: "What country would you like to know the capital of?"
+
+  utter_capital_wait:
+  - text: "I'm looking up the capital of {country}..."
+
+  utter_ask_location:
+  - text: "Which time zone do you need the time zone of?"
+
+  utter_finding_time_zone:
+  - text: "Ok, give me a second to look up the time in {city}"
+
+  utter_explanation:
+  - text: "I am an AI with limited capabilities. I am able to tell you the capital of any country in the world
+  and I am also able to tell you the largest country in any region by population and area. I can even tell you the time in any time zone in the world.
+  I have very basic conversational skills and i can talk about how you are feeling. Remember, I can get confused easily. So, what would you like to ask me?"
+
+  utter_confusion:
+  - text: "I am sorry, I do not understand what you are trying to do. Remember I have limited capabilities and I only have certain functionalities
+  such as telling you the time of any time zone in the world, and the population and capital of any country in the world."
+
+  utter_what_region:
+  - text: "What region would you like to know the largest country? If you would like to know the largest country in the world please specify by saying 'world'."
+
+  utter_finding_largest_country_region:
+  - text: "Understood, finding the largest country in {region}"
+
+  utter_finding_largest_country_world:
+  - text: "Finding the current largest country in the world..."
+
+  utter_anythingelse:
+  - text: "Anything else I can help you with?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

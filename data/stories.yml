@@ -1,0 +1,129 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: find_capital_short
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_capital_specific
+  - action: utter_capital_wait
+  - action: action_give_capital
+  - intent: thanks
+  - action: utter_welcome
+
+- story: find_capital_long
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_capital_general
+  - action: utter_capital_ask
+  - intent: give_country
+  - action: utter_capital_wait
+  - action: action_give_capital
+  - intent: thanks
+  - action: utter_welcome
+
+- story: ask_for_time_zone_long
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: find_time_zone
+  - action: utter_ask_location
+  - intent: city_info
+  - action: utter_finding_time_zone
+  - action: action_show_time_zone
+  - intent: thanks
+  - action: utter_welcome
+  - action: utter_goodbye
+
+- story: ask_for_time_zone_short
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: find_time_zone_for_location
+    - action: utter_finding_time_zone
+    - action: action_show_time_zone
+    - intent: thanks
+    - action: utter_welcome
+    - action: utter_goodbye
+
+- story: user_wants_help
+  steps:
+   - intent: request_help
+   - action: utter_explanation
+
+- story: user_is_confused
+  steps:
+  - intent: confusion
+  - action: utter_explanation
+
+- story: largest_country_short
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: largest_country_with_region
+  - action: utter_finding_largest_country_region
+  - action: action_show_largest_country
+  - intent: thanks
+  - action: utter_welcome
+  - action: utter_goodbye
+
+
+- story: largest_country_long
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: largest_country_general
+  - action: utter_what_region
+  - intent: give_region
+  - action: utter_finding_largest_country_region
+  - action: action_show_largest_country
+  - action: utter_anythingelse
+  - intent: deny
+  - action: utter_goodbye
+
+- story: largest_country_world
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: largest_country_world
+  - action: utter_finding_largest_country_world
+  - action: action_show_largest_country
+  - intent: thanks
+  - action: utter_welcome
+  - action: utter_anythingelse
+  - intent: deny
+  - action: utter_goodbye
+
+- story: bot_is_confused
+  steps:
+  - intent: unknown
+  - action: action_handle_unknown_intent

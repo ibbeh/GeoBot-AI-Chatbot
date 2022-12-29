@@ -1,0 +1,315 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thanks
+  examples: |
+    - thank you
+    - I appriciate it
+    - thanks
+    - appricieate it
+    - ok, thanks!
+    - thanks a lot!
+    - thanks so much
+
+- intent: find_capital_specific
+  examples: |
+    - find the capital of [Canada](country)
+    - what is the capital city of [Russia](country?
+    - Can you tell me the capital of [Egypt](country)?
+    - what is the government city of [Australia](country)?
+    - capital of [Syria](country)
+    - government capital of [Mexico](country)
+    - main capital of [Brazil](country)
+    - find me the capital city of [Spain](country)
+    - what is the government capital of [England](country)?
+    - are you able to give me the capital of [France](country)
+    - are you able to tell me the government city of [South Africa](country)?
+
+- intent: find_capital_general
+  examples: |
+    - can you give me capital cities
+    - what is the capital
+    - are you able to tell me capitals?
+    - what information can you give me on capital cities?
+    - find me the capital city
+    - What is the government city
+    - capital
+    - can you tell me the capital
+    - capital of
+    - do you know the capital
+
+- intent: give_country
+  examples: |
+    - [United States](country)
+    - [France](country)
+    - [Germany](country)
+    - [Spain](country)
+    - [Japan](country)
+    - [Mexico](country)
+    - [Brazil](country)
+    - [Pakistan}(country)
+    - [China](country)
+
+- intent: find_time_zone
+  examples: |
+    - can you tell the time?
+    - could you tell me the time?
+    - I need you to find the time
+    - can you find me the time?
+    - are you able to tell the time?
+    - what time is it?
+    - tell me the time
+    - tell me the time zone
+
+- intent: find_time_zone_for_location
+  examples: |
+    - what is the time of [America/New_York](city)
+    - tell me the time in the time zone of [America/Montreal](city)
+    - Time in [Europe/Istanbul](city)
+    - do you know the time of the time zone [Europe/Madrid](city)
+    - Can you tell me what time it is in [America/New_York](city)?
+    - I need to know the time of [Pacific/Auckland](city)
+    - What time is it in [US/Alaska](city) right now?
+    - What is the time in [Canada/Yukon](city) now?
+    - tell me the time in [Africa/Ouagadougou](city)
+    - [Singapore](city) time
+    - What is the time in [UCT](city)
+
+- intent: city_info
+  examples: |
+    - [Europe/Sarajevo](city)
+    - [Chile/Continental](city)
+    - [Brazil/East](city)
+    - [CET](city)
+    - The city is [Canada/Atlantic](city)
+    - city is [Africa/Windhoek](city)
+    - [America/Anchorage](city) is the city
+    - [Europe/London](city)
+
+- intent: request_help
+  examples: |
+    - How do I use this bot?
+    - This isn't working
+    - how does it work
+    - this bot is not working
+    - what can i do to use the bot
+    - how does this work?
+    - what functionality does this bot have?
+    - what can this bot do
+    - what is your ability
+    - how do you work
+    - what can you do
+    - how do I use your services
+    - what are you able to do
+    - are you able to do this?
+    - Why aren't you working?
+    - What kind of bot are you
+
+- intent: confusion
+  examples: |
+    - I don't understand
+    - I don't know what to doy
+    - Can you do this?
+    - What are your limitations?
+    - What is going on?
+    - How do I do this?
+    - Help me do this.
+    - Please help me with this
+    - What is going on
+    - What am I supposed to do?
+    - How to I use this bot
+    - What are your functionalities?
+
+- intent: largest_country_general
+  examples: |
+    - What is the largest country?
+    - Can you tell me the largest country
+    - Largest country 
+    - Are you able to tell me the largest country?
+    - Biggest country
+    - What is the biggest country
+    - Where is the largest country?
+    - Where is the biggest country
+    - What is the biggest country
+    - Can you tell me what the biggest country is
+    - Can you tell me what the largest country is
+    - Are you able to tell me the biggest country
+    - What is the most massive country?
+    - Most populated country
+    - What is the most populated country
+    - Can you tell me the most populated country?
+    - Biggest country by area
+    - What is the largest country by area?
+    - What is the largest sized country?
+    - Country with the biggest size
+
+- intent: give_region
+  examples: |
+    - [Asia](region)
+    - [africa](region)
+    - [EUROPE](region)
+    - [Antarctica](region)
+    - [Oceania](region)
+    - [Australia](region)
+    - [North America](region)
+    - [South America](region)
+    - The region is [ASIA](region)
+    - Find the largest country in [Africa](region)
+    - region is [Europe](region)
+    - The continent is [Africa](region)
+    - Largest in [North America](region)
+    - [world](region)
+    - [planet](region)
+    - [earth](region)
+
+- intent: largest_country_with_region
+  examples: |
+    - What is the largest country in [Asia](region)
+    - Biggest country in [Africa](region)
+    - Most massive country in [North America](region)
+    - Can you tell me the biggest country in [South America](region)?
+    - Largest country in [antarctica](region)
+    - Most populated country in [Oceania](region)
+    - Are you able to tell me the most massive country in [Europe](region)?
+    - Biggest country by size in [Europe](region)
+    - Largest country by area in [Africa](region)
+    - What is the biggest country by population in [Asia](region)
+    - Can you find the largest country in [Australia](region)?
+    - Can you tell me the largest country in [North America](region) by population?
+    - What is the biggest country in [South America](region) by size?
+    - By area, what is the largest country in [Oceania](region)
+
+- intent: largest_country_world
+  examples: |
+      - What is the largest country in the [world](region)
+      - Biggest country in the [world](region)
+      - Most massive country in the [world](region)
+      - Can you tell me the biggest country in the [World](region)?
+      - Are you able to find the largest country in the [WORLD](region)?
+      - In the [world](region), what is the biggest country?
+      - What is the largest country on [earth](region)
+      - Biggest country on [earth](region)
+      - What is the largest country on the [planet](region)?
+      - Most massive country on [earth](region)
+      - What is the largest country in the [world](region) by population
+      - What is the most populated country in the [world](region)?
+      - Biggest country in the [world](region) by area
+      - Largest country in the [world](region) by size
+      - By population, what is the biggest country in the [world](region)?
+      - By area, what is the largest country on [earth](region)
+      - Biggest country on the [planet](region)
+
+- intent: unknown
+  examples: |
+      - I'm not sure what you mean
+      - Could you explain that again?
+      - I'm sorry, I don't understand
+      - I don't know what you're talking about
+      - Can you clarify that for me?
+      - I'm having trouble following you
+      - I'm not sure I follow
+      - Could you repeat that?
+      - I'm not sure I understand
+      - I'm not sure what you're trying to say
+      - I'm sorry, I'm not sure what you mean
+      - I'm not sure I get it
+      - Could you elaborate on that?
+      - I'm sorry, I'm not following
+      - I don't understand what you mean
+      - Could you explain that more clearly?
+      - I'm sorry, I'm not sure I understand what you're saying
+      - I dn't knw wht u r tlkn abt
+      - I'm sorry I dnt understand
+      - Wht r u tryn t say?
+      - I'm not sure what you mean, could you please rephrase it?
+      - I'm sorry, I'm having trouble understanding your message
+      - I'm not sure I understand what you're trying to say, could you please explain it more clearly?
